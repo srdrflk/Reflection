@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1B1A8764-29E4-4EB3-9D95-6D92EEFB8EC6}|Reflection\\Reflection.csproj|c:\\users\\serdar_filik\\desktop\\dotnetbasicmentorprojects\\advancedcsharphometask1\\reflection\\reflection\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B1A8764-29E4-4EB3-9D95-6D92EEFB8EC6}|Reflection\\Reflection.csproj|solutionrelative:reflection\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B1A8764-29E4-4EB3-9D95-6D92EEFB8EC6}|Reflection\\Reflection.csproj|C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\reflection\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1B1A8764-29E4-4EB3-9D95-6D92EEFB8EC6}|Reflection\\Reflection.csproj|solutionrelative:reflection\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\Reflection\\appsettings.json",
+              "RelativeDocumentMoniker": "Reflection\\appsettings.json",
+              "ToolTip": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\Reflection\\appsettings.json",
+              "RelativeToolTip": "Reflection\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-19T12:37:33.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\Reflection\\Program.cs",
+              "RelativeDocumentMoniker": "Reflection\\Program.cs",
+              "ToolTip": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\Reflection\\Program.cs",
+              "RelativeToolTip": "Reflection\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:28:03.277Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
