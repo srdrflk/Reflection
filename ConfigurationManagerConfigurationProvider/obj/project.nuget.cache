@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "j0uwQK/rd7WFqp4H7dNBegSYv8YuW8RlsFNkqYWhqDuKol/M+JJWVDIKwyiq0yv4A9qTqEuEHc6Hrvs4nbwhwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Serdar_Filik\\Desktop\\DotNetBasicMentorProjects\\AdvancedCSharpHomeTask1\\Reflection\\ConfigurationManagerConfigurationProvider\\ConfigurationManagerConfigurationProvider.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Serdar_Filik\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.0\\system.configuration.configurationmanager.9.0.0.nupkg.sha512",
+    "C:\\Users\\Serdar_Filik\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.0\\system.diagnostics.eventlog.9.0.0.nupkg.sha512",
+    "C:\\Users\\Serdar_Filik\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.0\\system.security.cryptography.protecteddata.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

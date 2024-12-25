@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
+using ConfigurationProviders;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 // note :  before running the application create a appsettings.json file (as mentioned at line 50)   
 // file path : ..\Reflection\bin\Debug\net8.0\appsettings.json
@@ -29,7 +31,6 @@ public class ConfigurationManagerConfigurationItemAttribute : Attribute
     }
 }
 
-
 public class ConfigurationSettings : ConfigurationComponentBase
 {
     [FileConfigurationItemAttribute("ConnectionString")]
@@ -38,28 +39,61 @@ public class ConfigurationSettings : ConfigurationComponentBase
     [ConfigurationManagerConfigurationItemAttribute("MaxItems")]
     public int MaxItems { get; set; }
 }
+
+
 public abstract class ConfigurationComponentBase
 {
+    private Assembly LoadAssembly()
+    {
+        try
+        {
+            return Assembly.Load("FileConfigurationProvider");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Failed to load the ConfigurationProviders assembly: " + ex.Message);
+            return null;
+        }
+    }
+
     public void LoadSettings()
     {
-        foreach (var property in GetType().GetProperties())
+        var assembly = LoadAssembly();
+
+        var properties = GetType().GetProperties();
+        var attribute0 = properties.FirstOrDefault().GetCustomAttributes();
+        var attribute1 = properties[1].GetCustomAttributes();
+
+        foreach (PropertyInfo property in GetType().GetProperties())
         {
             foreach (Attribute attribute in property.GetCustomAttributes())
             {
-                if (attribute is FileConfigurationItemAttribute fileAttr)
+                if (attribute is FileConfigurationItemAttribute)
                 {
-                    string json = File.ReadAllText("appsettings.json");
-                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
-                    if (dict.TryGetValue(fileAttr.SettingName, out object value))
+                    string providerTypeName = "FileConfigurationProvider." + attribute.GetType().Name.Replace("ItemAttribute", "") + "Provider";
+                    Type providerType = assembly.GetType(providerTypeName);
+
+                    if (providerType == null)
                     {
-                        property.SetValue(this, Convert.ChangeType(value, property.PropertyType));
+                        Console.WriteLine($"Type {providerTypeName} not found.");
+                        continue;
+                    }
+
+                    IConfigurationProvider provider = Activator.CreateInstance(providerType) as IConfigurationProvider;
+                    object settingValue = provider?.LoadSetting(property.Name, property.PropertyType);
+                    if (settingValue != null)
+                    {
+                        property.SetValue(this, settingValue);
                     }
                 }
 
+
                 if (attribute is ConfigurationManagerConfigurationItemAttribute configManagerAttr)
                 {
-                    string value = ConfigurationManager.AppSettings[configManagerAttr.SettingName];
-                    if (value != null)
+                    string json = File.ReadAllText("appSettings.json");
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+
+                    if (dict.TryGetValue(configManagerAttr.SettingName, out object value))
                     {
                         property.SetValue(this, Convert.ChangeType(value, property.PropertyType));
                     }
@@ -70,38 +104,57 @@ public abstract class ConfigurationComponentBase
 
     public void SaveSettings()
     {
+        var assembly = LoadAssembly();
         var settings = new Dictionary<string, object>();
-        foreach (var property in GetType().GetProperties())
+
+        foreach (PropertyInfo property in GetType().GetProperties())
         {
             foreach (Attribute attribute in property.GetCustomAttributes())
             {
-                object value = property.GetValue(this);
+
                 if (attribute is FileConfigurationItemAttribute fileAttr)
                 {
-                    settings[fileAttr.SettingName] = value;
+                    string providerTypeName = "FileConfigurationProvider." + attribute.GetType().Name.Replace("ItemAttribute", "") + "Provider";
+                    Type providerType = assembly.GetType(providerTypeName);
+
+                    if (providerType == null)
+                    {
+                        Console.WriteLine($"Type {providerTypeName} not found.");
+                        continue;
+                    }
+
+                    IConfigurationProvider provider = Activator.CreateInstance(providerType) as IConfigurationProvider;
+                    settings[fileAttr.SettingName] = property.GetValue(this);
+                    provider?.SaveSetting(property.Name, settings[fileAttr.SettingName]);
                 }
+
+                if (attribute is ConfigurationManagerConfigurationItemAttribute configManagerAttr)
+                {
+                    object value = property.GetValue(this);
+                    settings[configManagerAttr.SettingName] = value;
+                    string json = JsonConvert.SerializeObject(settings, Newtonsoft.Json.Formatting.Indented);
+                    File.WriteAllText("appSettings.json", json);
+                }
+                
             }
         }
-        string json = JsonConvert.SerializeObject(settings, Newtonsoft.Json.Formatting.Indented);
-        File.WriteAllText("appsettings.json", json);
     }
-}
 
-
-class Program
-{
-    static void Main(string[] args)
+    class Program
     {
-        ConfigurationSettings settings = new ConfigurationSettings();
-        settings.LoadSettings();
+        static void Main(string[] args)
+        {
+            ConfigurationSettings settings = new ConfigurationSettings();
+            settings.LoadSettings();
 
-        Console.WriteLine($"ConnectionString: {settings.ConnectionString}");
-        Console.WriteLine($"MaxItems: {settings.MaxItems}");
+            Console.WriteLine($"ConnectionString: {settings.ConnectionString}");
+            Console.WriteLine($"MaxItems: {settings.MaxItems}");
 
-        // Modify settings
-        settings.ConnectionString = "SomeOtherValue";
-        settings.MaxItems = 30;
+            // Modify settings
+            settings.ConnectionString = "Task2Value";
+            settings.MaxItems = 30;
 
-        settings.SaveSettings();
+            settings.SaveSettings();
+        }
     }
 }

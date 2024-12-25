@@ -1,0 +1,12 @@
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\bin\Debug\net8.0\ConfigurationProviders.deps.json
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\bin\Debug\net8.0\ConfigurationProviders.dll
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\bin\Debug\net8.0\ConfigurationProviders.pdb
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.AssemblyInfoInputs.cache
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.AssemblyInfo.cs
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.csproj.CoreCompileInputs.cache
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.sourcelink.json
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.dll
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\refint\ConfigurationProviders.dll
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ConfigurationProviders.pdb
+C:\Users\Serdar_Filik\Desktop\DotNetBasicMentorProjects\AdvancedCSharpHomeTask1\Reflection\ConfigurationProviders\obj\Debug\net8.0\ref\ConfigurationProviders.dll
